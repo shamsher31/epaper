@@ -1,0 +1,43 @@
+{
+  "name": "subha-wa-sham",
+  "version": "1.0.0",
+  "description": "Urdu Newspaper",
+  "main": "app.js",
+  "scripts": {
+    "test": "standard",
+    "postinstall": "npm --prefix=. link database/ modules/ utils/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shamsher31/subha-wa-sham.git"
+  },
+  "keywords": [
+    "News",
+    "Paper"
+  ],
+  "author": "Shamsher Ansari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shamsher31/subha-wa-sham/issues"
+  },
+  "homepage": "https://github.com/shamsher31/subha-wa-sham#readme",
+  "dependencies": {
+    "bcryptjs": "^2.2.0",
+    "bluebird": "^2.9.34",
+    "boom": "^2.8.0",
+    "dotenv": "^1.2.0",
+    "hapi": "^8.8.0",
+    "joi": "^6.5.0",
+    "lodash": "^3.10.0",
+    "mongodb-uri": "^0.9.7",
+    "mongoose": "^4.0.7",
+    "mongoose-timestamp": "^0.4.0",
+    "require-directory": "^2.1.1"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5",
+    "sinon": "^1.15.4",
+    "standard": "^4.5.4"
+  }
+}
