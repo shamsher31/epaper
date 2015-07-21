@@ -36,6 +36,8 @@
   },
   "devDependencies": {
     "chai": "^3.2.0",
+    "good": "^6.3.0",
+    "good-console": "^5.0.2",
     "mocha": "^2.2.5",
     "sinon": "^1.15.4",
     "standard": "^4.5.4",
