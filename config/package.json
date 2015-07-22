@@ -1,3 +1,4 @@
 {
-  "name" : "config"
+  "name" : "config",
+  "main" : "plugins.js"
 }
