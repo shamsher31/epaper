@@ -12,6 +12,8 @@ server.connection({
 
 require('config');
 
+require('database');
+
 // Add the route
 server.route({
   method: 'GET',
