@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shamsher31/subha-wa-sham.git"
+    "url": "git+https://github.com/shamsher31/epaper.git"
   },
   "keywords": [
     "News",
@@ -18,9 +18,9 @@
   "author": "Shamsher Ansari",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shamsher31/subha-wa-sham/issues"
+    "url": "https://github.com/shamsher31/epaper/issues"
   },
-  "homepage": "https://github.com/shamsher31/subha-wa-sham#readme",
+  "homepage": "https://github.com/shamsher31/epaper#readme",
   "dependencies": {
     "bcryptjs": "^2.2.0",
     "bluebird": "^2.9.34",
