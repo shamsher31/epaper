@@ -1,25 +1,33 @@
 var server = require('../'),
-    goodReporter = {
-      reporters : [{
-        reporter : require('good-console'),
-        events: { log: '*', response: '*' }
-      }]
-    },
-    tvLog = {
-      endpoint: '/logs'
-    };
+    Inert          = require('inert'),
+    Vision         = require('vision'),
+    HapiSwagger    = require('hapi-swagger');
 
 module.exports = {
   
   Good : {
     register : require('good'),
-    options : goodReporter
+    options : {
+      reporters : [{
+        reporter : require('good-console'),
+        events: { log: '*', response: '*' }
+      }]
+    }
   },
 
   Tv : {
     register : require('tv'),
-    options: tvLog
+    options: {
+      endpoint: '/logs'
+    }
   },
+
+  Swagger : [Inert, Vision, {
+    register: HapiSwagger,
+    options: {
+      apiVersion: '1.1.0'
+    }
+  }],
 
   cb: function (error) {
     if (error) {

@@ -5,13 +5,19 @@ module.exports = {
   UploadForm : {
     method: 'GET',
     path:'/', 
-    handler: controller.UploadForm
+    config: {
+      description: 'Display Upload form',
+      tags: ['api'],
+      handler: controller.UploadForm  
+    }
   },
 
   Upload : {
     method: 'POST',
     path: '/upload',
     config: {
+      description: 'Uploads image',
+      tags: ['api'],
       payload: {
         maxBytes: 1048576, // 1MB
         output: 'stream',
