@@ -15,13 +15,6 @@ module.exports = {
     }
   },
 
-  Tv : {
-    register : require('tv'),
-    options: {
-      endpoint: '/logs'
-    }
-  },
-
   Swagger : [Inert, Vision, {
     register: HapiSwagger,
     options: {
