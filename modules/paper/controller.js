@@ -1,4 +1,11 @@
-var fs = require('fs');
+// refer http://excellencenodejsblog.com/gridfs-using-mongoose-nodejs/
+
+var fs = require('fs'),
+    mongoose = require('mongoose'),
+    Grid = require('gridfs-stream'),
+    conn = mongoose.connection;
+
+Grid.mongo = mongoose.mongo;
 
 module.exports = {
   UploadForm: UploadForm,
@@ -16,19 +23,23 @@ function UploadForm (request, reply) {
 
 function Upload (request, reply) {
 
-  // This is the directory you wish to place the files.
-  var uploadDir = './uploads/';
+  var gfs = Grid(conn.db);
+  
+  var writeStream = gfs.createWriteStream({
+    filename: request.payload.fileUpload.hapi.filename
+  });
 
-  // Create stream where the files will go.
-  var writeStream = fs.createWriteStream(uploadDir + request.payload.fileUpload.hapi.filename);
-
-  // Pipe the payload file into the write stream.
   request.payload.fileUpload.pipe(writeStream);
 
-  // On stream end or error send a response.
-  request.payload.fileUpload.on('end', function(){
+  writeStream.on('close', function (file) {
+    // do something with `file`
+    console.log(file.filename + ' Written To DB');
     reply({"Status":"Done"});
-  }).on('error', function(){
+
+  });
+
+  writeStream.on('error', function(err) {
+    console.log(err);
     reply('Error in uploading');
   });
 
