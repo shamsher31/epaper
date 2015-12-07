@@ -11,3 +11,5 @@ Urdu Newspaper
 4. Mongoose
 5. Grid-FS for Image storage
 6. [Sharp Image processing](http://sharp.dimens.io/en/stable/)
+7. Redis
+8. JWT
